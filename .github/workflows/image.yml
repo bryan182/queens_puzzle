@@ -1,7 +1,5 @@
 name: docker-image
-
 on: push
-
 jobs:
   deploy:
     name: deploy to cluster
