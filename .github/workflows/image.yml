@@ -17,8 +17,6 @@ jobs:
           password: ${{ secrets.D_PASS }}
 
       - name: Build and push to Docker
-        uses: docker/build-push-action@v2
-        with:
-          context: .
-          push: true
-          tags: ${{ github.repository }}:${{ github.sha }}
+        run: |
+          docker build . --tag ghcr.io/bryan182/queens_puzzle:latest
+          docker push ghcr.io/bryan182/queens_puzzle:latest
